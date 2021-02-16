@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Misis2.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,9 @@ namespace Misis2
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new OnePage();
+
+
         }
 
         protected override void OnStart()

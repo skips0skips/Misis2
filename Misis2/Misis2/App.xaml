@@ -3,6 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Misis2.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Color x:Key="background1">#CFEAFB</Color>
+            <Color x:Key="background2">#BBE4F9</Color>
+            <Color x:Key="background3">#81D0F4</Color>
+            <Color x:Key="background4">#5EC6F2</Color>
+            <Color x:Key="buttoncolor">#009FDF</Color>
+            <Color x:Key="partitions1">#27B4F6</Color>
+            <Color x:Key="partitions2">#FFC0CB</Color>
+            <Color x:Key="partitions3">#6CC24A</Color>
+            <Style x:Key="button1" TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource buttoncolor}"/>
+                <Setter Property="FontSize"
+                        Value="25"/>
+                <Setter Property="TextColor"
+                        Value="White"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
