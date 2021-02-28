@@ -1,0 +1,24 @@
+{
+    "query": {
+        "count": 1,
+        "created": "2016-08-19T15:46:31Z",
+        "lang": "ru-RU",
+        "results": {
+            "rate": {
+                "id": "USDRUB",
+                "Name": "USD/RUB",
+                "Rate": "64.0425",
+                "Date": "8/19/2016",
+                "Time": "12:53pm",
+                "Ask": "64.0513",
+                "Bid": "64.0425"
+            }
+        }
+    }
+}
+//[
+    //    {
+    //        "name": "Xamarin"
+    //    }  
+    //]
+

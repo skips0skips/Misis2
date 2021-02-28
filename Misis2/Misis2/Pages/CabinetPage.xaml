@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mv="clr-namespace:Misis2.ModelView"
+             x:Class="Misis2.Pages.CabinetPage">
+    <ContentPage.BindingContext>
+        <mv:CabinetPageModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <BoxView BackgroundColor="#CFEAFB"
+                     Grid.ColumnSpan="3"
+                     Grid.RowSpan="3"/>
+            <Button Text="Y"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    WidthRequest="50"
+                     Command="{Binding LoadDataCommand}"/>
+            <Label Text="Личные данные"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <StackLayout
+                Grid.Row="2"
+                Grid.Column="1">
+                <Label Text="{Binding Rate}"
+                       />
+            </StackLayout>
+
+            <!--<StackLayout Grid.Row="2"
+                   Grid.Column="1">
+                <ListView x:Name="MyListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>-->
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

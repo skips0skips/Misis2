@@ -23,7 +23,7 @@
                             ItemsSource="{Binding Disciplines}"
                             Grid.RowSpan="4"
                             Margin="0,150"
-                           >
+                            >
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" 
                                      Span="1"
