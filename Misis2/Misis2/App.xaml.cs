@@ -2,6 +2,9 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+[assembly: ExportFont("The Northern Block Ltd - Webnar Light.otf", Alias = "WebnarLight")]
+[assembly: ExportFont("The Northern Block Ltd - Webnar Medium_1.otf", Alias = "WebnarMedium")]
+[assembly: ExportFont("The Northern Block Ltd - Webnar Thin.otf", Alias = "WebnarThin")]
 
 namespace Misis2
 {
@@ -10,8 +13,14 @@ namespace Misis2
         public App()
         {
             InitializeComponent();
-
-            MainPage = new OnePage();
+            
+            MainPage = new NavigationPage(new OnePage())
+            {
+                BarBackgroundColor = Color.FromHex("#5EC6F2"),
+                BarTextColor = Color.White,              
+            };
+            NavigationPage.SetHasNavigationBar(this, false);
+            // MainPage = new OnePage();
 
 
         }

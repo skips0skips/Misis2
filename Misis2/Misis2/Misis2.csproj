@@ -11,11 +11,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\The Northern Block Ltd - Webnar Light.otf" />
+    <None Remove="Fonts\The Northern Block Ltd - Webnar Medium_1.otf" />
+    <None Remove="Fonts\The Northern Block Ltd - Webnar Thin.otf" />
+    <None Remove="Json\CabinetPageJson.json" />
     <None Remove="Json\json1.json" />
+    <None Remove="Json\OnePageJson.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Fonts\The Northern Block Ltd - Webnar Light.otf" />
+    <EmbeddedResource Include="Fonts\The Northern Block Ltd - Webnar Medium_1.otf" />
+    <EmbeddedResource Include="Fonts\The Northern Block Ltd - Webnar Thin.otf" />
+    <EmbeddedResource Include="Json\CabinetPageJson.json" />
     <EmbeddedResource Include="Json\json1.json" />
+    <EmbeddedResource Include="Json\OnePageJson.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,4 +45,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 </Project>

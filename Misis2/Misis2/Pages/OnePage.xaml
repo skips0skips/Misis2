@@ -15,10 +15,24 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <BoxView Grid.Row="0" BackgroundColor="{StaticResource background1}"/>
-            <!--<Button Style="{StaticResource button1}" Text="Математика" Grid.Row="0"  />-->
             <BoxView Grid.Row="1" BackgroundColor="{StaticResource background2}"/>
             <BoxView Grid.Row="2" BackgroundColor="{StaticResource background3}"/>
             <BoxView Grid.Row="3" BackgroundColor="{StaticResource background4}"/>
+            <Label Text="Личный кабинет"
+                   FontFamily="WebnarLight"
+                   Grid.Row="0"
+                   HorizontalOptions="End"
+                   VerticalOptions="Start"
+                   TextDecorations="Underline"
+                   Margin="0,50,40,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CabinetPageCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Image Source="logo_misis.png"
+                   Grid.Row="0"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Start"/>
             <CollectionView SelectionMode="Single" 
                             ItemsSource="{Binding Disciplines}"
                             Grid.RowSpan="4"

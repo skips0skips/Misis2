@@ -2,43 +2,135 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mv="clr-namespace:Misis2.ModelView"
-             x:Class="Misis2.Pages.CabinetPage">
+             x:Class="Misis2.Pages.CabinetPage"
+             Title="Личные данные"
+             Style="{StaticResource NavigationPage322}"
+             BackgroundColor="#CFEAFB">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Настройки" Order="Secondary"/>
+        <ToolbarItem Text="Выйти с аккаунта" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.BindingContext>
         <mv:CabinetPageModel x:Name="vm"/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="10"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
-            <BoxView BackgroundColor="#CFEAFB"
-                     Grid.ColumnSpan="3"
-                     Grid.RowSpan="3"/>
-            <Button Text="Y"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    WidthRequest="50"
-                     Command="{Binding LoadDataCommand}"/>
-            <Label Text="Личные данные"
-                   Grid.Row="1"
-                   Grid.Column="1"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
-            <StackLayout
-                Grid.Row="2"
-                Grid.Column="1">
-                <Label Text="{Binding Rate}"
-                       />
-            </StackLayout>
+            <ScrollView Grid.Column="1">
+                <StackLayout Spacing="20">
+                    <Grid ColumnSpacing="0"
+                          Margin="0,20,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <BoxView BackgroundColor="{StaticResource buttoncolor}"
+                             HeightRequest="3"/>
+                        <BoxView Grid.Column="1"
+                             BackgroundColor="#FFFFFF"
+                             HeightRequest="3"/>
+                        <Label Grid.Column="1"
+                               Text="{Binding FLPname}"
+                               Style="{StaticResource label2}"/>
+                    </Grid>
+                    <Grid ColumnSpacing="0" Margin="30,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+                        <BoxView BackgroundColor="{StaticResource partitions2}"
+                                 HeightRequest="3"
+                                 Grid.RowSpan="2"
+                                 />
+                        <BoxView Grid.Column="1"
+                             BackgroundColor="#FFFFFF"
+                             HeightRequest="3"
+                             Grid.RowSpan="2"/>
+                        <Label Grid.Column="1"
+                               Text="Предметная область"
+                               Style="{StaticResource label4}"/>
+                        <CollectionView SelectionMode="None" 
+                                        ItemsSource="{Binding SubjectAreans}"
+                                        Grid.Column="1"
+                                        Grid.Row="1">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" 
+                                     Span="1"
+                                     VerticalItemSpacing="10"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.EmptyView>
+                                <Label Text="No Item found." TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </CollectionView.EmptyView>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Label Text="{Binding Subject}"
+                                               Style="{StaticResource label3}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Grid>
+
+                    <Grid ColumnSpacing="0" Margin="30,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+                        <BoxView BackgroundColor="{StaticResource partitions3}"
+                                 HeightRequest="3"
+                                 Grid.RowSpan="2"
+                                 />
+                        <BoxView Grid.Column="1"
+                             BackgroundColor="#FFFFFF"
+                             HeightRequest="3"
+                             Grid.RowSpan="2"/>
+                        <Label Grid.Column="1"
+                               Text="Группы"
+                               Style="{StaticResource label4}"/>
+                        <CollectionView SelectionMode="None" 
+                                        ItemsSource="{Binding SubjectAreans}"
+                                        Grid.Column="1"
+                                        Grid.Row="1"
+                                        HorizontalOptions="Center">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" 
+                                     Span="1"
+                                     VerticalItemSpacing="5"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.EmptyView>
+                                <Label Text="No Item found." TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </CollectionView.EmptyView>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Label Text="{Binding Subject}" 
+                                               Style="{StaticResource label3}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                    </Grid>
+
+
+                </StackLayout>
+                
+                
+                
+            </ScrollView>
 
             <!--<StackLayout Grid.Row="2"
                    Grid.Column="1">

@@ -14,7 +14,8 @@ namespace Misis2.Pages
     {
         public OnePage()
         {
-            InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);//уберает верхний бар
+            InitializeComponent();          
         }
     }
 }

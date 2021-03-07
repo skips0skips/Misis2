@@ -1,0 +1,18 @@
+{
+    "NamePerson": {
+       
+            "firstName": "Kirill",
+        
+       
+            "lastName": "Blinov",
+        
+        
+            "patronymic": "Alekseevich"
+        
+    },
+    "subjectArea": [
+        { "subject": "Mathematics" },
+        { "subject": "History" },
+        { "subject": "Mathematics" }
+    ]
+}

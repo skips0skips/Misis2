@@ -12,6 +12,7 @@
             <Color x:Key="partitions1">#27B4F6</Color>
             <Color x:Key="partitions2">#FFC0CB</Color>
             <Color x:Key="partitions3">#6CC24A</Color>
+            <Color x:Key="backgroundLabel1">#2C3E50</Color>
             <Style x:Key="button1" TargetType="Button">
                 <Setter Property="BackgroundColor"
                         Value="{StaticResource buttoncolor}"/>
@@ -19,6 +20,42 @@
                         Value="25"/>
                 <Setter Property="TextColor"
                         Value="White"/>
+            </Style>
+            <Style x:Key="label1" TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="Title"/>
+                <Setter Property="FontFamily"
+                        Value="WebnarMedium"/>
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource backgroundLabel1}"/>
+            </Style>
+            <Style ApplyToDerivedTypes="true" TargetType="NavigationPage" x:Key="NavigationPage322">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource background4}"/>
+                <Setter Property="BarTextColor" Value="{StaticResource backgroundLabel1}"/>
+            </Style>
+            <Style TargetType="Label" x:Key="label2">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#2C3E50"/>
+                <Setter Property="FontFamily" Value="WebnarMedium"/>
+            </Style>
+            <Style TargetType="Label" x:Key="label3">
+                <Setter Property="FontSize" Value="Body"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="#2C3E50"/>
+                <Setter Property="FontFamily" Value="WebnarMedium"/>
+
+            </Style>
+            <Style TargetType="Label" x:Key="label4">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontAttributes" Value="None"/>
+                <Setter Property="TextColor" Value="#2C3E50"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="WebnarMedium"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>
