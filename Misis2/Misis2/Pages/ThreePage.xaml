@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mv="clr-namespace:Misis2.ModelView"
+             Title="{Binding SelectedTimeFull.groupName}"
+             Style="{StaticResource NavigationPage322}"
+             BackgroundColor="#CFEAFB"
+             x:Class="Misis2.Pages.ThreePage" 
+             xmlns:local="clr-namespace:Misis2" >
+    <ContentPage.BindingContext>
+        <mv:ThreePageModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Spacing="20"
+                             Grid.Column="1">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Предмет:"/>
+                        <Label Text="{Binding SelectedDiscipline.Name}" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Количество человек в группе: "/>
+                        <Label Text="{Binding CountRoots}" />
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Количество присутствующих:" />
+                        <Label  Text="{Binding EditCountRoots}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Статус: "/>
+                        <Label Text="НЕ ОТМЕЧЕНО" />
+                    </StackLayout>
+                    
+                    <Frame>
+                        <ListView ItemsSource="{Binding Roots}"                                  
+                                  SelectedItem="{Binding SelectedRoot}"
+                                  SelectionMode="Single"
+                                  ItemSelected="ListView_ItemSelected"
+                                  x:Name="MyList">
+                            <ListView.Header>
+                                <Label Text="Студенты:"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center"/>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label LineBreakMode="WordWrap"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="{Binding firstName}" />
+                                                        <Span Text=" " />
+                                                        <Span Text="{Binding lastName}"/>
+                                                        <Span Text=" " />
+                                                        <Span Text="{Binding patronymic}" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <!--<Switch HorizontalOptions="End"
+                                                    VerticalOptions="Center"                                                  
+                                                    IsToggled="{Binding mark}"
+                                                    Toggled="Switch_Toggled"
+                                                    Grid.Column="1"
+                                                    />-->
+
+                                            <Button Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference MyList}}" 
+                                                    CommandParameter="{Binding .}" 
+                                                    HorizontalOptions="End"
+                                                    VerticalOptions="Center"
+                                                    Grid.Column="1"
+                                                    Text="Присутствует"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Frame>
+                    <ListView ItemsSource="{Binding MaillRootList}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label LineBreakMode="WordWrap"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding id}" />
+                                                    <Span Text=" " />
+                                                    <Span Text="{Binding mark}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <!--<CollectionView SelectionMode="None" 
+                                        ItemsSource="{Binding Roots}">
+                    <CollectionView.Header>
+                        <Label Text="Студенты:"
+                                       VerticalOptions="Center"
+                                       Style="{StaticResource label4}"
+                                       HorizontalOptions="Center"/>
+                    </CollectionView.Header>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" 
+                                     Span="1"
+                                     VerticalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.EmptyView>
+                        <Label Text="No Item found." TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="2"/>
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding firstName}"
+                                               HorizontalOptions="Center"
+                                               Grid.Row="0"/>
+                                <Label Grid.Row="1"
+                                               HorizontalOptions="FillAndExpand"
+                                               BackgroundColor="Gray"/>
+                                <Switch HorizontalOptions="End"
+                                        VerticalOptions="Center"
+                                        IsToggled="False"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>-->
+                <!--<Switch HorizontalOptions="End"
+                                        VerticalOptions="Center"
+                                        IsToggled="False"/>-->
+                <Button Text="Отметить"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,46 @@
+{
+    "kkk": {
+
+        "timeFull": [
+            { "groupName": "BPI-18" },
+            { "groupName": "BPI-19" },
+            { "groupName": "BPI-20" }
+        ],
+
+        "timePart": [
+            { "groupName": "Mathematics" },
+            { "groupName": "History" },
+            { "groupName": "Mathematics" }
+        ]
+    },
+    "aaa": {
+
+        "timeFull": [
+            { "groupName": "Mathematics" },
+            { "groupName": "History" },
+            { "groupName": "Mathematics" }
+        ],
+
+        "timePart": [
+            { "groupName": "Mathematics" },
+            { "groupName": "History" },
+            { "groupName": "Mathematics" }
+        ]
+    },
+    "sss": {
+
+        "timeFull": [
+            { "groupName": "Mathematics" },
+            { "groupName": "History" },
+            { "groupName": "Mathematics" }
+        ],
+
+        "ddd": [
+            { "groupName": "Mathematics" },
+            { "groupName": "History" },
+            { "groupName": "Mathematics" }
+        ]
+    }
+}
+
+

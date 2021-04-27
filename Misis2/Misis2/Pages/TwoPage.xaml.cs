@@ -16,5 +16,10 @@ namespace Misis2.Pages
         {
             InitializeComponent();
         }
+
+        private void TimeFullSelected(object sender, SelectionChangedEventArgs e)
+        {
+           // vm.NavigationThreePage();
+        }
     }
 }

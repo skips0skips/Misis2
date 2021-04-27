@@ -4,19 +4,23 @@
             "firstName": "Kirill",
             "lastName": "Blinov",
             "patronymic": "Alekseevich",
-            "id": "001"
+            "id": "001",
+            "mark": true
+
         },
         {
             "firstName": "Kirill1",
             "lastName": "Blinov",
             "patronymic": "Alekseevich",
-            "id": "002"
+            "id": "002",
+            "mark": false
         },
         {
             "firstName": "Kirill2",
             "lastName": "Blinov",
             "patronymic": "Alekseevich",
-            "id": "003"
+            "id": "003",
+            "mark": false
         }
     ],
     "BPI-19": [
@@ -24,19 +28,22 @@
             "firstName": "Kirill",
             "lastName": "Blinov",
             "patronymic": "Alekseevich",
-            "id": "001"
+            "id": "001",
+            "mark": false
         },
         {
             "firstName": "Kirill1",
             "lastName": "Blinov",
             "patronymic": "Alekseevich",
-            "id": "002"
+            "id": "002",
+            "mark": false
         },
         {
             "firstName": "Kirill2",
             "lastName": "Blinov",
             "patronymic": "Alekseevich",
-            "id": "003"
+            "id": "003",
+            "mark": false
         }
     ]
 }

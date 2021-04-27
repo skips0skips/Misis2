@@ -6,8 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -21,29 +24,31 @@ namespace Misis2.ModelView
         {
             Disciplines = GetDisciplines();
             CabinetPageCommand = new Command(async() =>
-            {
-                //var cabinetVM = new CabinetPageModel();
-                //var cabinetPage = new CabinetPage();
-                //cabinetPage.BindingContext = cabinetPage;
-                //await Application.Current.MainPage.Navigation.PushAsync(cabinetPage);
-                
+            {               
                 var cabinetPage = new CabinetPage();
                 await Application.Current.MainPage.Navigation.PushAsync(cabinetPage);
             });
         }
-        //private Discipline selectedDiscipline;
-
-        //public Discipline SelectedDiscipline
+        public void NavigationTwoPage()
+        {           
+            var bindingContext = new TwoPageModel { SelectedDiscipline = SelectedDiscipline };
+            var page = new TwoPage() { BindingContext = bindingContext };
+            App.Current.MainPage.Navigation.PushAsync(page);
+        }
+        //public void ShowDetails()
         //{
-        //    get { return selectedDiscipline; }
-        //    set { selectedDiscipline = value; }
+        //    var bindingContext = new TwoPageModel { SelectedDiscipline = SelectedDiscipline };
+        //    var page = new TwoPage() { BindingContext = new TwoPageModel { SelectedDiscipline = SelectedDiscipline } };
+        //    App.Current.MainPage.Navigation.PushAsync(page);
         //}
-        private Discipline selectedDiscipline;
 
+        private Discipline selectedDiscipline;
         public Discipline SelectedDiscipline
         {
             get { return selectedDiscipline; }
-            set { selectedDiscipline = value; }
+            set { selectedDiscipline = value;
+                OnPropertyChanged("SelectedDiscipline");
+            }
         }
         private ObservableCollection<Discipline> disciplines;
         public ObservableCollection<Discipline> Disciplines
@@ -70,10 +75,9 @@ namespace Misis2.ModelView
             //};
         }
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propName)
+        public void OnPropertyChanged([CallerMemberName] string name = "")
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

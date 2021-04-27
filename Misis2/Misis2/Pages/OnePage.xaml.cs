@@ -17,5 +17,13 @@ namespace Misis2.Pages
             NavigationPage.SetHasNavigationBar(this, false);//уберает верхний бар
             InitializeComponent();          
         }
+
+        private void ProductSelected(object sender, SelectionChangedEventArgs e)
+        {
+            // SharedTransitionNavigationPage.SetTransitionSelectedGroup(this, vm.SelectedProduct.Name);
+            vm.NavigationTwoPage();
+        }
+
+
     }
 }

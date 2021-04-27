@@ -17,6 +17,8 @@
     <None Remove="Json\CabinetPageJson.json" />
     <None Remove="Json\json1.json" />
     <None Remove="Json\OnePageJson.json" />
+    <None Remove="Json\ThreePageJson.json" />
+    <None Remove="Json\TwoPageJson.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +28,8 @@
     <EmbeddedResource Include="Json\CabinetPageJson.json" />
     <EmbeddedResource Include="Json\json1.json" />
     <EmbeddedResource Include="Json\OnePageJson.json" />
+    <EmbeddedResource Include="Json\ThreePageJson.json" />
+    <EmbeddedResource Include="Json\TwoPageJson.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,9 +45,16 @@
     <EmbeddedResource Update="Pages\OnePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ThreePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\TwoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Json\Disciplinee\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>

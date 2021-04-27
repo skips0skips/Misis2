@@ -95,9 +95,7 @@ namespace Misis2.ModelView
                 OnPropertyChanged("Patronymic");
             }
         }
-        //public string FirstName;
-        //public string LastName;
-        //public string Patronymic;
+
         private void GetNamePersons()
         {
             var assembly = typeof(MainPage).GetTypeInfo().Assembly;
@@ -111,25 +109,10 @@ namespace Misis2.ModelView
                 this.FirstName = rateInfo.FirstName;
                 this.LastName = rateInfo.LastName;
                 this.Patronymic = rateInfo.Patronymic;  
+                
             }
         }
-        //private ObservableCollection<NamePerson> GetNamePersons()
-        //{
-        //    var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-        //    Stream stream = assembly.GetManifestResourceStream("Misis2.Json.CabinetPageJson.json");
-        //    using (var reader = new System.IO.StreamReader(stream))
-        //    {
-        //        var json = reader.ReadToEnd();
-        //        JObject o = JObject.Parse(json);
-        //        var str = o.SelectToken(@"$.NamePerson");
-        //        //List<NamePerson> mylist = JsonConvert.DeserializeObject<List<NamePerson>>(str.ToString());
-        //        //return namePersons = new ObservableCollection<NamePerson>(mylist);
-        //        this.FirstName = rateInfo.FirstName;
-        //        this.LastName = rateInfo.LastName;
-        //        this.Patronymic = rateInfo.Patronymic;
-        //        return 
-        //    }
-        //}
+
         private void LoadData()
         {
             try

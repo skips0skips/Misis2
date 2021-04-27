@@ -1,0 +1,58 @@
+{
+    "BPI-18": [
+        {
+            "id": [
+                { "firstName": "Kirill" },
+                { "lastName": "Blinov" },
+                { "patronymic": "Alekseevich" },
+                { "id": "001" }
+            ]
+        },
+        {
+            "id": [
+                { "firstName": "Kirill1" },
+                { "lastName": "Blinov1" },
+                { "patronymic": "Alekseevich1" },
+                { "id": "002" }
+            ]
+        },
+        {
+            "id": [
+                { "firstName": "Kirill2" },
+                { "lastName": "Blinov2" },
+                { "patronymic": "Alekseevich2" },
+                { "id": "003" }
+            ]
+        },
+        {
+            "id": [
+                { "firstName": "Kirill3" },
+                { "lastName": "Blinov3" },
+                { "patronymic": "Alekseevich3" },
+                { "id": "004" }
+            ]
+        },
+        {
+            "id": [
+                { "firstName": "Kirill4" },
+                { "lastName": "Blinov4" },
+                { "patronymic": "Alekseevich4" },
+                { "id": "001" }
+            ]
+        }
+    ],
+    "BPI-19": {
+
+        "timeFull": [
+            { "groupName": "Mathematics" },
+            { "groupName": "History" },
+            { "groupName": "Mathematics" }
+        ],
+
+        "timePart": [
+            { "groupName": "Mathematics" },
+            { "groupName": "History" },
+            { "groupName": "Mathematics" }
+        ]
+    }
+}

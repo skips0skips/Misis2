@@ -38,14 +38,14 @@
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="TextColor" Value="#2C3E50"/>
-                <Setter Property="FontFamily" Value="WebnarMedium"/>
+                <!--<Setter Property="FontFamily" Value="WebnarMedium"/>-->
             </Style>
             <Style TargetType="Label" x:Key="label3">
                 <Setter Property="FontSize" Value="Body"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="TextColor" Value="#2C3E50"/>
-                <Setter Property="FontFamily" Value="WebnarMedium"/>
+                <!--<Setter Property="FontFamily" Value="WebnarMedium"/>-->
 
             </Style>
             <Style TargetType="Label" x:Key="label4">
@@ -55,7 +55,7 @@
                 <Setter Property="FontAttributes" Value="None"/>
                 <Setter Property="TextColor" Value="#2C3E50"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="FontFamily" Value="WebnarMedium"/>
+                <!--<Setter Property="FontFamily" Value="WebnarMedium"/>-->
             </Style>
         </ResourceDictionary>
     </Application.Resources>
