@@ -15,7 +15,7 @@ namespace Misis2.Pages
     {
         public ThreePage()
         {
-            
+           
             InitializeComponent();
         }
 
@@ -27,6 +27,20 @@ namespace Misis2.Pages
         private void Switch_Toggled(object sender, ToggledEventArgs e)
         {
             var A = e;
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            if(sender is Button button)
+            {
+                button.IsEnabled = false;
+                
+            }
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            
         }
 
 

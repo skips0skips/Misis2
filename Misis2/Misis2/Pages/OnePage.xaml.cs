@@ -13,8 +13,7 @@ namespace Misis2.Pages
     public partial class OnePage : ContentPage
     {
         public OnePage()
-        {
-            NavigationPage.SetHasNavigationBar(this, false);//уберает верхний бар
+        {           
             InitializeComponent();          
         }
 

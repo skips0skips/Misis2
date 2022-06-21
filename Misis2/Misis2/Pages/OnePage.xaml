@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mv="clr-namespace:Misis2.ModelView"          
+             xmlns:mv="clr-namespace:Misis2.ModelView"
+             Title="Предметные области"
              x:Class="Misis2.Pages.OnePage">
     <ContentPage.BindingContext>
         <mv:OnePageModel x:Name="vm"/>
@@ -18,52 +19,7 @@
             <BoxView Grid.Row="1" BackgroundColor="{StaticResource background2}"/>
             <BoxView Grid.Row="2" BackgroundColor="{StaticResource background3}"/>
             <BoxView Grid.Row="3" BackgroundColor="{StaticResource background4}"/>
-            <Label Text="Личный кабинет"
-                  
-                   Grid.Row="0"
-                   HorizontalOptions="End"
-                   VerticalOptions="Start"
-                   TextDecorations="Underline"
-                   Margin="0,50,40,0">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding CabinetPageCommand}" />
-                </Label.GestureRecognizers>
-            </Label>
-            <Image Source="logo_misis.png"
-                   Grid.Row="0"
-                   HorizontalOptions="Start"
-                   VerticalOptions="Start"/>
-                                                                                                <!--<ListView 
-                                                                                                    ItemsSource="{Binding Disciplines}" 
-                                                                                                    Grid.RowSpan="4"
-                                                                                                                Margin="0,150"
-                                                                                                      RowHeight="65"
-                                                                                                      SeparatorVisibility="Default"
-                                                                                                       Footer=""
-                  
-                                                                                                      ItemSelected="ListView_ItemSelected">
-                                                                                                    <ListView.Header>
-                                                                                                        <StackLayout>
-                                                                                                            <Label Text="Название предметной области"
-                                                                                                                   HorizontalOptions="Center"/>
-                                                                                                        </StackLayout>
-                                                                                                    </ListView.Header>
-                                                                                                    <ListView.ItemTemplate>
-                                                                                                        <DataTemplate>
-                                                                                                            <ViewCell>
-                                                                                                                <StackLayout VerticalOptions="FillAndExpand"
-                                                                                                                 Orientation="Horizontal"
-                                                                                                                 Padding="20,10,0,10"
-                                                                                                                 Spacing="20">
-                                                                                                                    <Label Text="{Binding Name}"
-                                                                                                                 FontSize="Small"
-                                                                                                                 VerticalOptions="Center"
-                                                                                                                 TextColor="Black"/>
-                                                                                                                </StackLayout>
-                                                                                                            </ViewCell>
-                                                                                                        </DataTemplate>
-                                                                                                    </ListView.ItemTemplate>
-                                                                                                </ListView>-->
+
             <StackLayout Grid.RowSpan="4"
                          Margin="10,150,20,0">
                 <Grid>
@@ -74,12 +30,6 @@
                             SelectedItem="{Binding SelectedDiscipline}"
                             SelectionChanged="ProductSelected"                           
                             >
-                        <CollectionView.Header>
-                            <Label Text="Предметные области:"
-                                   HorizontalOptions="Center"
-                                   Style="{StaticResource label4}"
-                                   VerticalOptions="Center"/>
-                        </CollectionView.Header>
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical" 
                                      Span="1"                                     
@@ -92,7 +42,7 @@
                             <DataTemplate>
                                 <Grid>
                                     <BoxView Background="#009FDF"/>
-                                    <Label Text="{Binding Name}"
+                                    <Label Text="{Binding name}"
                                            VerticalOptions="Center"
                                            HorizontalOptions="Center"
                                            FontSize="Caption"

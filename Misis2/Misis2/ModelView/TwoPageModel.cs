@@ -7,9 +7,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Net.Http;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -21,7 +23,7 @@ namespace Misis2.ModelView
         public TwoPageModel()
         {
             FLPCommand = new Command(GetTimeFull1);
-            TimeFulls = GetTimeFull();
+            //GetTimeFullAsync();
         }
 
         private Discipline selectedDiscipline;
@@ -34,7 +36,7 @@ namespace Misis2.ModelView
                 {
                     selectedDiscipline = value;
                     OnPropertyChanged("SelectedDiscipline");
-                    TimeFulls = GetTimeFull();
+                    GetTimeFullAsync();
                 }
                 
             }
@@ -42,12 +44,38 @@ namespace Misis2.ModelView
         /// <summary>
         public void NavigationThreePage()
         {
-            var bindingContext = new ThreePageModel { SelectedTimeFull = SelectedTimeFull, SelectedDiscipline = SelectedDiscipline };
+            var bindingContext = new ThreePageModel { SelectedTimeFull3 = SelectedTimeFull3, SelectedDiscipline = SelectedDiscipline };
             var page = new ThreePage() { BindingContext = bindingContext };
             App.Current.MainPage.Navigation.PushAsync(page);
         }
+        private TimeFull3 selectedTimeFull3;
+        public TimeFull3 SelectedTimeFull3
+        {
+            get { return selectedTimeFull3; }
+            set
+            {
+                if (selectedTimeFull3 != value)
+                {
+                    selectedTimeFull3 = value;
+                    OnPropertyChanged("SelectedTimeFull3");
+                    NavigationThreePage();
+                }
+            }
+        }
+        /// </summary>
+
+        private ObservableCollection<TimeFull3> timeFulls3;
+        public ObservableCollection<TimeFull3> TimeFulls3
+        {
+            get { return timeFulls3; }
+            set
+            {
+                timeFulls3 = value;
+                 OnPropertyChanged("TimeFulls3");              
+            }
+        }
         /// 
-        private TimeFull selectedTimeFull;
+       /* private TimeFull selectedTimeFull;
         public TimeFull SelectedTimeFull
         {
             get { return selectedTimeFull; }
@@ -70,15 +98,35 @@ namespace Misis2.ModelView
             { timeFulls = value;
                // OnPropertyChanged("TimeFulls");              
             }
-        }
+        } */
         private void GetTimeFull1()
         {
-            GetTimeFull();
+          //  GetTimeFullAsync();
         }
-        private  ObservableCollection<TimeFull> GetTimeFull()
+        public string Url = "https://script.google.com/macros/s/AKfycbwzO83Rt1jnpm7RHV_bnl1qsArVwIFT_EG2JT9kgE9x8trXjGZC1rSiTYZ2gfuvdjv7/exec";
+        private async Task<ObservableCollection<TimeFull3>> GetTimeFullAsync()
         {
             try
             {
+                var client = new HttpClient();
+                var uri = Url;//;
+                List<Name> names = new List<Name>();
+                names.Add(new Name() { id = selectedDiscipline.name, mark = null });
+                var conf = new MaillRoot2() { idCode = "8", name = names };
+                var jsonString = JsonConvert.SerializeObject(conf);
+                var requestContent = new StringContent(jsonString);
+                var result = await client.PostAsync(uri, requestContent);
+                var resultContent = await result.Content.ReadAsStringAsync();
+                JObject o = JObject.Parse(resultContent);
+                var str = o.SelectToken(@"$." + "user");
+                List<TimeFull3> timeFullss = JsonConvert.DeserializeObject<List<TimeFull3>>(str.ToString());
+                return TimeFulls3 = new ObservableCollection<TimeFull3>(timeFullss);
+            }
+            catch { return new ObservableCollection<TimeFull3>(); }
+
+
+
+                /*
                 var assembly = typeof(MainPage).GetTypeInfo().Assembly;
                 Stream stream = assembly.GetManifestResourceStream("Misis2.Json.TwoPageJson.json");
                 using (var reader = new System.IO.StreamReader(stream))
@@ -92,7 +140,7 @@ namespace Misis2.ModelView
                 }
             }
             catch
-            { return new ObservableCollection<TimeFull>(); }
+            { return new ObservableCollection<TimeFull>(); } */
 
         }
 

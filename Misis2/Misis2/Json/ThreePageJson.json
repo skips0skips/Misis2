@@ -1,29 +1,128 @@
-{
-    "BPI-18": [
+﻿{
+    "БПИ-18": [
         {
-            "firstName": "Kirill",
-            "lastName": "Blinov",
-            "patronymic": "Alekseevich",
+            "firstName": "Екатерина",
+            "lastName": "Аксенова",
+            "patronymic": "Владимировна",
             "id": "001",
             "mark": true
 
         },
         {
-            "firstName": "Kirill1",
-            "lastName": "Blinov",
-            "patronymic": "Alekseevich",
+            "firstName": "Кирилл",
+            "lastName": "Блинов",
+            "patronymic": "Алексеевич",
             "id": "002",
             "mark": false
         },
         {
-            "firstName": "Kirill2",
-            "lastName": "Blinov",
-            "patronymic": "Alekseevich",
+            "firstName": "Евгений",
+            "lastName": "Иванин",
+            "patronymic": "Михайлович",
             "id": "003",
             "mark": false
+        },
+        {
+            "firstName": "Владислав",
+            "lastName": "Макаров",
+            "patronymic": "Николаевич",
+            "id": "004",
+            "mark": false
+        },
+        {
+            "firstName": "Валентин",
+            "lastName": "Казанцев",
+            "patronymic": "Геннадьевич",
+            "id": "005",
+            "mark": false
+        },
+        {
+            "firstName": "Никита",
+            "lastName": "Губанов",
+            "patronymic": "Сергеевич",
+            "id": "006",
+            "mark": false
+        },
+        {
+            "firstName": "Данил",
+            "lastName": "Рожновский",
+            "patronymic": "Алексеевич",
+            "id": "007",
+            "mark": false
+        },
+        {
+            "firstName": "Ольга",
+            "lastName": "Попова",
+            "patronymic": "Владимировна",
+            "id": "008",
+            "mark": false
+        },
+        {
+            "firstName": "Григорий",
+            "lastName": "Тимкин",
+            "patronymic": "Алексеевич",
+            "id": "009",
+            "mark": false
+        },
+        {
+            "firstName": "Алина",
+            "lastName": "Добровольская",
+            "patronymic": "Александровна",
+            "id": "010",
+            "mark": false
+        },
+        {
+            "firstName": "Ольга",
+            "lastName": "Ионова",
+            "patronymic": "Александровна",
+            "id": "011",
+            "mark": false
+        },
+        {
+            "firstName": "Улдана",
+            "lastName": "Утебаева",
+            "patronymic": "Алидбайкызы",
+            "id": "012",
+            "mark": false
+        },
+        {
+            "firstName": "Сая",
+            "lastName": "Кушкинбаева",
+            "patronymic": "Сериковна",
+            "id": "013",
+            "mark": false
+        },
+        {
+            "firstName": "Иван",
+            "lastName": "Павлов",
+            "patronymic": "Николаевич",
+            "id": "014",
+            "mark": false
+        },
+        {
+            "firstName": "Дмитрий",
+            "lastName": "Погорелов",
+            "patronymic": "Александрович",
+            "id": "015",
+            "mark": false
+        },
+        {
+            "firstName": "Екатерина",
+            "lastName": "Туркина",
+            "patronymic": "Александровна",
+            "id": "016",
+            "mark": false
+        },
+        {
+            "firstName": "Кирилл",
+            "lastName": "Людженский",
+            "patronymic": "Вадимович",
+            "id": "017",
+            "mark": false
         }
+
     ],
-    "BPI-19": [
+    "БПИ-19": [
         {
             "firstName": "Kirill",
             "lastName": "Blinov",

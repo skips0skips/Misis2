@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mv="clr-namespace:Misis2.ModelView"
-             Title="{Binding SelectedTimeFull.groupName}"
+             Title="{Binding SelectedTimeFull3.name}"
              Style="{StaticResource NavigationPage322}"
              BackgroundColor="#CFEAFB"
              x:Class="Misis2.Pages.ThreePage" 
@@ -21,35 +21,44 @@
                              Grid.Column="1">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Предмет:"/>
-                        <Label Text="{Binding SelectedDiscipline.Name}" />
+                        <Label Text="Предмет:"
+                               Style="{StaticResource label3}"/>
+                        <Label Text="{Binding SelectedDiscipline.name}" 
+                               Style="{StaticResource label3}"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Количество человек в группе: "/>
-                        <Label Text="{Binding CountRoots}" />
+                        <Label Text="Количество человек в группе: "
+                               Style="{StaticResource label3}"/>
+                        <Label Text="{Binding CountRoots}" 
+                               Style="{StaticResource label3}"/>
                     </StackLayout>
                     
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Количество присутствующих:" />
-                        <Label  Text="{Binding EditCountRoots}"/>
+                        <Label Text="Количество присутствующих:"
+                               Style="{StaticResource label3}"/>
+                        <Label  Text="{Binding EditCountRoots}"
+                                Style="{StaticResource label3}"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Статус: "/>
-                        <Label Text="НЕ ОТМЕЧЕНО" />
+                        <Label Text="Статус: "
+                               Style="{StaticResource label3}"/>
+                        <Label Text="{Binding StatusValue}" 
+                               Style="{StaticResource label3}"/>
                     </StackLayout>
-                    
+
                     <Frame>
-                        <ListView ItemsSource="{Binding Roots}"                                  
-                                  SelectedItem="{Binding SelectedRoot}"
+                        <ListView ItemsSource="{Binding Users}"                                  
+                                  SelectedItem="{Binding SelectedUser}"
                                   SelectionMode="Single"
                                   ItemSelected="ListView_ItemSelected"
                                   x:Name="MyList">
                             <ListView.Header>
                                 <Label Text="Студенты:"
                                        VerticalOptions="Center"
-                                       HorizontalOptions="Center"/>
+                                       HorizontalOptions="Center"
+                                       Style="{StaticResource label3}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate>
@@ -57,7 +66,8 @@
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="80"/>
+                                                <ColumnDefinition Width="80"/>
                                             </Grid.ColumnDefinitions>
                                             <Label LineBreakMode="WordWrap"
                                                        HorizontalOptions="Center"
@@ -80,42 +90,36 @@
                                                     />-->
 
                                             <Button Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference MyList}}" 
+                                                    x:Name="{Binding id}"
                                                     CommandParameter="{Binding .}" 
                                                     HorizontalOptions="End"
                                                     VerticalOptions="Center"
-                                                    Grid.Column="1"
-                                                    Text="Присутствует"/>
+                                                    Grid.Column="2"                                                    
+                                                    Style="{StaticResource button1}"
+                                                    FontSize="8"
+                                                    Text="Присутствует"
+                                                    TextTransform="None"                                                    
+                                                    Clicked="Button_Clicked"
+                                                    
+                                                    />
+                                            <Button Command="{Binding Path=BindingContext.NCommand, Source={x:Reference MyList}}" 
+                                                    x:Name="{Binding id}"
+                                                    CommandParameter="{Binding .}" 
+                                                    HorizontalOptions="End"
+                                                    VerticalOptions="Center"
+                                                    Grid.Column="1"                                                    
+                                                    Style="{StaticResource button1}"
+                                                    FontSize="7"
+                                                    TextTransform="None"
+                                                    Text="Уважительная &#10; причина"
+                                                    Clicked="Button_Clicked"
+                                                    />
                                         </Grid>
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Frame>
-                    <ListView ItemsSource="{Binding MaillRootList}">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Label LineBreakMode="WordWrap"
-                                                       HorizontalOptions="Center"
-                                                       VerticalOptions="Center">
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span Text="{Binding id}" />
-                                                    <Span Text=" " />
-                                                    <Span Text="{Binding mark}"/>
-                                                </FormattedString>
-                                            </Label.FormattedText>
-                                        </Label>
-                                    </Grid>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
                 </StackLayout>
                 <!--<CollectionView SelectionMode="None" 
                                         ItemsSource="{Binding Roots}">
@@ -156,9 +160,21 @@
                 <!--<Switch HorizontalOptions="End"
                                         VerticalOptions="Center"
                                         IsToggled="False"/>-->
-                <Button Text="Отметить"
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Очистить"
                         HorizontalOptions="Center"
-                        VerticalOptions="Center"/>
+                        VerticalOptions="Center"
+                        Clicked="Button_Clicked_1"
+                        Style="{StaticResource button1}"
+                        Command="{Binding MarkCommand}"/>
+                    <Button Text="Отметить"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                     
+                        Style="{StaticResource button1}"
+                        Command="{Binding MarkCommand}"/>
+                </StackLayout>
+                <Label FontSize="1"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

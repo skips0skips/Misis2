@@ -1,10 +1,9 @@
-{
-    "kkk": {
+﻿{
+    "Информатика": {
 
         "timeFull": [
-            { "groupName": "BPI-18" },
-            { "groupName": "BPI-19" },
-            { "groupName": "BPI-20" }
+            { "groupName": "БПИ-18" },
+            { "groupName": "БПИ-19" }
         ],
 
         "timePart": [
@@ -13,29 +12,15 @@
             { "groupName": "Mathematics" }
         ]
     },
-    "aaa": {
+    "Проектирование информационных систем": {
 
         "timeFull": [
-            { "groupName": "Mathematics" },
-            { "groupName": "History" },
+            { "groupName": "БПИ-19" },
+            { "groupName": "БПИ-18" },
             { "groupName": "Mathematics" }
         ],
 
         "timePart": [
-            { "groupName": "Mathematics" },
-            { "groupName": "History" },
-            { "groupName": "Mathematics" }
-        ]
-    },
-    "sss": {
-
-        "timeFull": [
-            { "groupName": "Mathematics" },
-            { "groupName": "History" },
-            { "groupName": "Mathematics" }
-        ],
-
-        "ddd": [
             { "groupName": "Mathematics" },
             { "groupName": "History" },
             { "groupName": "Mathematics" }

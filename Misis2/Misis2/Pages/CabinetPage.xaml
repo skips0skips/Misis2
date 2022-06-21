@@ -125,6 +125,14 @@
 
                     </Grid>
 
+                    <Button  
+                            Margin="30,0,0,0"
+                            Text="Выйти с аккаунта"
+                            CornerRadius="24"
+                            BorderWidth="1"
+                            BorderColor="Aqua"
+                            BackgroundColor="White"
+                            />
 
                 </StackLayout>
                 

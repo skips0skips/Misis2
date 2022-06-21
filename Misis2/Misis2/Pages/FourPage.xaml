@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Misis2.Pages.FourPage"
+             Title="БПИ-18">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="Ф.И.О" 
+                   Grid.Column="0"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Grid.Row="0"/>
+            <Label Text="Дата"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Grid.Column="1"
+                   Grid.Row="0"/>
+            <Label Text="Присутствие"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Grid.Column="2"
+                   Grid.Row="0"/>
+            <Frame Grid.ColumnSpan="3" Grid.Row="1">
+
+                <ListView ItemsSource="{Binding MaillRootList}"                                  
+                                  SelectedItem="{Binding SelectedMaillRootList}"
+                                  SelectionMode="Single"
+                                  x:Name="MyList">
+                    <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label LineBreakMode="CharacterWrap"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding firstName}" />
+                                            <Span Text="                " />
+                                            <Span Text="{Binding lastName}"/>
+                                            </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <!--<Switch HorizontalOptions="End"
+                                                    VerticalOptions="Center"                                                  
+                                                    IsToggled="{Binding mark}"
+                                                    Toggled="Switch_Toggled"
+                                                    Grid.Column="1"
+                                                    />-->
+
+                                    <Label HorizontalOptions="End"
+                                           VerticalOptions="Center"
+                                           Grid.Column="1" 
+                                           LineBreakMode="CharacterWrap"
+                                           Text="{Binding data, StringFormat='{0:MMMM dd, yyyy}'}"                                    
+                                           />
+                                    <Label HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           Grid.Column="2" 
+                                           Text="{Binding mark}"
+                                           />
+                                    
+                                </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

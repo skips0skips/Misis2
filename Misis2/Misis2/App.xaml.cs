@@ -14,7 +14,7 @@ namespace Misis2
         {
             InitializeComponent();
             
-            MainPage = new NavigationPage(new OnePage())
+            MainPage = new NavigationPage(new MainOnePage())
             {
                 BarBackgroundColor = Color.FromHex("#5EC6F2"),
                 BarTextColor = Color.White,              

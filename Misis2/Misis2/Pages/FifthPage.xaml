@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:local="clr-namespace:Misis2.ModelView" 
+             xmlns:controls="clr-namespace:Misis2.ModelView.Controls" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#CFEAFB"
+             Title="Расписание на неделю"
+             x:Class="Misis2.Pages.FifthPage">
+    <ContentPage.BindingContext>
+        <local:FifthPageModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <controls:CustomListView ItemsSource = "{Binding Schedsules}"
+                  BackgroundColor="#CFEAFB"
+                  HasUnevenRows = "true"
+                  ItemTapped    = "Handle_ItemTapped"
+                  Footer        = "">
+                <controls:CustomListView.ItemTemplate>
+                    <DataTemplate >
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Background="#009FDF">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="30" >
+                                    
+                                    <Label   Text  ="{Binding name}"  HorizontalOptions="Center"   FontSize="16" TextColor="White"/>
+                                    <Label   Text  ="{Binding date}"  HorizontalOptions="Center"   FontSize="16" TextColor="White"/>
+                                    
+                                </StackLayout>
+                                <StackLayout Padding="16"  IsVisible="{Binding IsVisible}" HorizontalOptions="EndAndExpand">
+                                    <controls:CustomListView2 ItemsSource = "{Binding Schedsules.schedulelist}"
+                                          BackgroundColor="#CFEAFB"
+                                          HasUnevenRows = "true"
+                                          ItemTapped    = "Handle_ItemTapped"
+                                          Footer        = "">       
+                                        <controls:CustomListView2.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout>
+                                                    <Label Text="{Binding group}"/>
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </controls:CustomListView2.ItemTemplate>
+                                    </controls:CustomListView2 >
+
+            <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <BoxView Grid.Column="0"
+                             Grid.ColumnSpan="3"
+                             Grid.RowSpan="5"
+                             BackgroundColor="#FFFFFF"
+                             HeightRequest="3"/>
+                                        <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="{Binding  number}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                                        <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="0"/>
+                                        <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="1"/>
+                                        <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="2"/>
+                                        <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="3"/>
+                                        <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="0"/>
+                                        <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="0"/>
+                                                                              
+                                        <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                         
+                        Text="{Binding  time}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                                    
+                                        <Label
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Text="{Binding objectt}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                                       
+
+                                    </Grid>
+
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </controls:CustomListView.ItemTemplate>
+            </controls:CustomListView >
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

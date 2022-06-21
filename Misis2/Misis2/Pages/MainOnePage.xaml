@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mv="clr-namespace:Misis2.ModelView"    
+             x:Class="Misis2.Pages.MainOnePage">
+    <ContentPage.BindingContext>
+        <mv:MainOnePageModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <BoxView Grid.Row="0" BackgroundColor="{StaticResource background1}"/>
+            <BoxView Grid.Row="1" BackgroundColor="{StaticResource background2}"/>
+            <BoxView Grid.Row="2" BackgroundColor="{StaticResource background3}"/>
+            <BoxView Grid.Row="3" BackgroundColor="{StaticResource background4}"/>
+            <Label Text="Личный кабинет"
+                  
+                   Grid.Row="0"
+                   HorizontalOptions="End"
+                   VerticalOptions="Start"
+                   TextDecorations="Underline"
+                   Margin="0,50,40,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CabinetPageCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Image Source="logo_misis.png"
+                   Grid.Row="0"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Start"/>
+
+            <StackLayout Grid.RowSpan="4"
+                         Margin="20,150,20,0">
+                <Grid Margin="10,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Column="0"
+                                 Grid.ColumnSpan="2"
+                                 Grid.Row="0">
+                        <Label Text="Цифровой журнал"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start"
+                               Style="{StaticResource label4}"
+                        />
+                        <Label     
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="Center"
+                               BackgroundColor="Gray"/>
+                    </StackLayout>
+                    <Button Text="Просмотреть"
+                            Grid.Row="1"
+                            Style="{StaticResource button1}"
+                            Grid.Column="0"
+                            Command="{Binding ViewLogCommand}"
+                            />
+                    <Button Text="Отметить"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Style="{StaticResource button1}"
+                            Command="{Binding OnePageCommand}"
+                            
+                            />
+                </Grid>
+                <StackLayout Margin="10,30,0,0">
+                    <Label Text="Расписание"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource label4}"
+                           />
+                    <Label     
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="Center"
+                               BackgroundColor="Gray"/>
+                    
+                    <Label Text="сегодня"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           
+                           />
+                    
+                </StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Column="0"
+                             Grid.ColumnSpan="3"
+                             Grid.RowSpan="5"
+                             BackgroundColor="#FFFFFF"
+                             HeightRequest="3"/>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label2}"
+                        />
+                    <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="0"/>
+                    <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="1"/>
+                    <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="2"/>
+                    <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="3"/>
+                    <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="0"/>
+                    <Label     Grid.ColumnSpan="3"
+                               HorizontalOptions="FillAndExpand"
+                               FontSize="0.1"
+                               VerticalOptions="End"
+                               BackgroundColor="Gray"
+                               Grid.Row="0"/>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Text="2"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label2}"
+                        />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Text="3"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label2}"
+                        />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Text="4"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label2}"
+                        />
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Text="5"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label2}"
+                        />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="08:30-10:15"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Text="10:30-12:00"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Text="12:45-14:15"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Text="14:45-16:20"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Text="16:30-18:05"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Text="БПИ-18 Информатика"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Text="БПИ-18 Информатика"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Text="БПИ-19 Информатика"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Text="БПИ-19 Информатика"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        Text="БПИ-20 Информатика"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource label3}"
+                        />
+                    
+                </Grid>
+                <Button     VerticalOptions="Center"
+                        Grid.Row="3"
+                        Text="На Всю неделю"
+                        Style="{StaticResource button1}"
+                        Command="{Binding FifthPageCommand}"
+                        Clicked="Button_Clicked"/>
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

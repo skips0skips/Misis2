@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mv="clr-namespace:Misis2.ModelView"
-             Title="{Binding SelectedDiscipline.Name}"
+             Title="{Binding SelectedDiscipline.name}"
              Style="{StaticResource NavigationPage322}"
              BackgroundColor="#CFEAFB"
              x:Class="Misis2.Pages.TwoPage">
@@ -19,8 +19,8 @@
             <StackLayout Spacing="20"
                          Grid.Column="1">
                 <CollectionView         SelectionMode="Single" 
-                                        ItemsSource="{Binding TimeFulls}"
-                                        SelectedItem="{Binding SelectedTimeFull}"
+                                        ItemsSource="{Binding TimeFulls3}"
+                                        SelectedItem="{Binding SelectedTimeFull3}"
                                         VerticalScrollBarVisibility="Never"
                                         SelectionChanged="TimeFullSelected" >
                     <CollectionView.Header>
@@ -44,7 +44,7 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="2"/>
                                 </Grid.RowDefinitions>
-                                <Label Text="{Binding groupName}"
+                                <Label Text="{Binding name}"
                                                HorizontalOptions="Center"
                                                Style="{StaticResource label4}"
                                                Grid.Row="0"/>
@@ -55,6 +55,7 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+                
             </StackLayout>
         </Grid>
     </ContentPage.Content>

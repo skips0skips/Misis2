@@ -128,7 +128,7 @@ namespace Misis2.ModelView
                    // this.Rate = rateInfo.Rate;
                 }
             }
-            catch (Exception ex)
+            catch 
             { }
         }
         public event PropertyChangedEventHandler PropertyChanged;

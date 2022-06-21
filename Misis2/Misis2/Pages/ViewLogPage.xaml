@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:mv="clr-namespace:Misis2.ModelView"
+             Title="Просмотр журнала"
+             Style="{StaticResource NavigationPage322}"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Misis2.Pages.ViewLogPage">
+    <ContentPage.BindingContext>
+        <mv:ViewLogPageModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Spacing="20"
+                         Grid.Column="1">
+                <Label Text="Выберите предмет:" HorizontalOptions="Start"
+                       Style="{StaticResource label3}"/>
+                <Picker Title="Выбрать"
+                    ItemsSource="{Binding DisciplineList}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding SelectedDiscipline}"/>
+                <Label Text="{Binding MyDiscipline}"  TextColor="Teal"/>
+                <Label Text="Выберите группу:" HorizontalOptions="Start"
+                       Style="{StaticResource label3}"/>
+                <Picker Title="Выбрать"
+                    ItemsSource="{Binding TimeFullList}"
+                    ItemDisplayBinding="{Binding groupName}"
+                    SelectedItem="{Binding SelectedTimeFull}"/>
+                <Label Text="{Binding MyTimeFull}"  TextColor="Teal"/>
+                
+
+                <Button Text="Просмотреть"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Style="{StaticResource button1}"
+                        Command="{Binding MarkCommand}"/>
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
