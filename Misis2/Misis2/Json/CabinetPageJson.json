@@ -1,18 +1,18 @@
-{
+﻿{
     "NamePerson": {
        
-            "firstName": "Kirill",
+            "firstName": "Кирилл",
         
        
-            "lastName": "Blinov",
+            "lastName": "Блинов",
         
         
-            "patronymic": "Alekseevich"
+            "patronymic": "Алексеевич"
         
     },
     "subjectArea": [
-        { "subject": "Mathematics" },
-        { "subject": "History" },
-        { "subject": "Mathematics" }
+        { "subject": "Информатика" },
+        { "subject": "Математика" },
+        { "subject": "Основы проектирования" }
     ]
 }

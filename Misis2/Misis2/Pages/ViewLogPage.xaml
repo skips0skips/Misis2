@@ -20,16 +20,20 @@
                 <Label Text="Выберите предмет:" HorizontalOptions="Start"
                        Style="{StaticResource label3}"/>
                 <Picker Title="Выбрать"
-                    ItemsSource="{Binding DisciplineList}"
-                    ItemDisplayBinding="{Binding Name}"
+                        
+                    ItemsSource="{Binding Disciplines}"
+                    ItemDisplayBinding="{Binding name}"
                     SelectedItem="{Binding SelectedDiscipline}"/>
+                
                 <Label Text="{Binding MyDiscipline}"  TextColor="Teal"/>
+                
                 <Label Text="Выберите группу:" HorizontalOptions="Start"
                        Style="{StaticResource label3}"/>
                 <Picker Title="Выбрать"
-                    ItemsSource="{Binding TimeFullList}"
-                    ItemDisplayBinding="{Binding groupName}"
+                    ItemsSource="{Binding TimeFulls3}"
+                    ItemDisplayBinding="{Binding name}"
                     SelectedItem="{Binding SelectedTimeFull}"/>
+                
                 <Label Text="{Binding MyTimeFull}"  TextColor="Teal"/>
                 
 

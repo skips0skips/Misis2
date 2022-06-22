@@ -3,11 +3,12 @@
 
         "timeFull": [
             { "groupName": "БПИ-18" },
-            { "groupName": "БПИ-19" }
+            { "groupName": "БПИ-19" },
+            { "groupName": "БПИ-20" }
         ],
 
         "timePart": [
-            { "groupName": "Mathematics" },
+            { "groupName": "Математика" },
             { "groupName": "History" },
             { "groupName": "Mathematics" }
         ]
@@ -15,9 +16,9 @@
     "Проектирование информационных систем": {
 
         "timeFull": [
-            { "groupName": "БПИ-19" },
             { "groupName": "БПИ-18" },
-            { "groupName": "Mathematics" }
+            { "groupName": "БПИ-19" },
+            { "groupName": "БПИ-20" }
         ],
 
         "timePart": [

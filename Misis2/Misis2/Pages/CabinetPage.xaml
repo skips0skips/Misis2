@@ -87,7 +87,7 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30"/>
-                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="150"/>
                         </Grid.RowDefinitions>
                         <BoxView BackgroundColor="{StaticResource partitions3}"
                                  HeightRequest="3"
@@ -97,6 +97,7 @@
                              BackgroundColor="#FFFFFF"
                              HeightRequest="3"
                              Grid.RowSpan="2"/>
+                        
                         <Label Grid.Column="1"
                                Text="Группы"
                                Style="{StaticResource label4}"/>
@@ -110,15 +111,18 @@
                                      Span="1"
                                      VerticalItemSpacing="5"/>
                             </CollectionView.ItemsLayout>
-                            <CollectionView.EmptyView>
-                                <Label Text="No Item found." TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            </CollectionView.EmptyView>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
-                                        <Label Text="{Binding Subject}" 
+                                    <StackLayout>
+                                        <Label Text="БПИ-18" 
                                                Style="{StaticResource label3}"/>
-                                    </Grid>
+                                        <Label Text="БПИ-19" 
+                                               Style="{StaticResource label3}"/>
+                                        <Label Text="БПИ-20" 
+                                               Style="{StaticResource label3}"/>
+                                        <Label Text="БТМО-18" 
+                                               Style="{StaticResource label3}"/>
+                                    </StackLayout>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
@@ -130,8 +134,9 @@
                             Text="Выйти с аккаунта"
                             CornerRadius="24"
                             BorderWidth="1"
-                            BorderColor="Aqua"
+                            BorderColor="#CFEAFB"
                             BackgroundColor="White"
+                        
                             />
 
                 </StackLayout>
@@ -139,7 +144,7 @@
                 
                 
             </ScrollView>
-
+        
             <!--<StackLayout Grid.Row="2"
                    Grid.Column="1">
                 <ListView x:Name="MyListView">

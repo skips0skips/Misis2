@@ -36,7 +36,7 @@
                                      VerticalItemSpacing="50"/>
                         </CollectionView.ItemsLayout>
                         <CollectionView.EmptyView>
-                            <Label Text="No Item found." TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="Загрузка данных" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
                         </CollectionView.EmptyView>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>

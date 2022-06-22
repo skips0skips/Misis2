@@ -133,11 +133,10 @@ namespace Misis2.Model
     public class ScheduleList
     {
         
-        public string date { get; set; }
-        public string number { get; set; }
-        public string time { get; set; }
-        public string group { get; set; }
-        public string objectt { get; set; }
+        public string number12 { get; set; }
+        public string time12 { get; set; }
+        public string group12 { get; set; }
+        public string objectt12 { get; set; }
 
     }
 
@@ -149,9 +148,7 @@ namespace Misis2.Model
         public string time { get; set; }
         public string group { get; set; }
         public string objectt { get; set; }
-
         public List<ScheduleList> schedulelist { get; set; }
-
         public bool IsVisible { get; set; }
 
     }

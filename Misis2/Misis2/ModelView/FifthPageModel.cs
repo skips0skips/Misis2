@@ -23,58 +23,145 @@ namespace Misis2.ModelView
                 {
                     name = "Понедельник",
                     date = "16.05.2022",
-                    number = "1",
-                    time =  "14:45-16:20",
-                    group = "БПИ-19",
-                    objectt ="Информатика",
                     schedulelist = new List<ScheduleList>
                     {
-                        new ScheduleList {date = "1222",
-                                            number = "1",
-                                            time =  "14:45-16:20",
-                                            group = "БПИ-19",
-                                            objectt ="Информатика" }
-                                         }
+                        new ScheduleList {
+                                            number12 = "1",
+                                            time12 =  "08:30-10:15",
+                                            group12 = "БПИ-20",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "2",
+                                            time12 =  "10:30-12:00",
+                                            group12 = "БПИ-20",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "3",
+                                            time12 =  "12:45-14:15",
+                                            group12 = "БПИ-19",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "4",
+                                            time12 =  "14:45-16:20",
+                                            group12 = "БПИ-19",
+                                            objectt12 ="Информатика" }
+
+
+                    },
 
                 },
                 new Schedule
                 {
                     name = "Вторник",
                     date = "17.05.2022",
-                    number = "1",
-                    time =  "14:45-16:20",
-                    group = "БПИ-19",
-                    objectt ="Информатика"
+                    schedulelist = new List<ScheduleList>
+                    {
+                        new ScheduleList {
+                                            number12 = "1",
+                                            time12 =  "08:30-10:15",
+                                            group12 = "БПИ-18",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "2",
+                                            time12 =  "10:30-12:00",
+                                            group12 = "БПИ-18",
+                                            objectt12 ="Информатика" }
+
+
+                    },
 
                 },
                 new Schedule
                 {
                     name = "Среда",
                     date = "18.05.2022",
-                    number = "1",
-                    time =  "14:45-16:20",
-                    group = "БПИ-19",
-                    objectt ="Информатика"
+                    schedulelist = new List<ScheduleList>
+                    {
+                        new ScheduleList {
+                                            number12 = "1",
+                                            time12 =  "08:30-10:15",
+                                            group12 = "БПИ-19",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "2",
+                                            time12 =  "10:30-12:00",
+                                            group12 = "БПИ-19",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "3",
+                                            time12 =  "12:45-14:15",
+                                            group12 = "БПИ-20",
+                                            objectt12 ="Информатика" }
+
+
+                    },
 
                 },
                 new Schedule
                 {
                     name = "Четверг",
                     date = "19.05.2022",
-                    number = "1",
-                    time =  "14:45-16:20",
-                    group = "БПИ-19",
-                    objectt ="Информатика"
+                    schedulelist = new List<ScheduleList>
+                    {
+                        new ScheduleList {
+                                            number12 = "1",
+                                            time12 =  "08:30-10:15",
+                                            group12 = "БПИ-20",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "2",
+                                            time12 =  "10:30-12:00",
+                                            group12 = "БПИ-20",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "3",
+                                            time12 =  "12:45-14:15",
+                                            group12 = "БПИ-18",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "4",
+                                            time12 =  "14:45-16:20",
+                                            group12 = "БПИ-18",
+                                            objectt12 ="Информатика" }
+
+
+                    },
 
                 },
                 new Schedule
                 {
                     name = "Пятница",
                     date = "20.05.2022",
-                    number = "1",
-                    time =  "14:45-16:20",
-                    group = "БПИ-19",
-                    objectt ="Информатика"
+                    schedulelist = new List<ScheduleList>
+                    {
+                        new ScheduleList {
+                                            number12 = "1",
+                                            time12 =  "08:30-10:15",
+                                            group12 = "БПИ-18",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "2",
+                                            time12 =  "10:30-12:00",
+                                            group12 = "БПИ-18",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "3",
+                                            time12 =  "12:45-14:15",
+                                            group12 = "БПИ-19",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "4",
+                                            time12 =  "14:45-16:20",
+                                            group12 = "БПИ-19",
+                                            objectt12 ="Информатика" },
+                        new ScheduleList {
+                                            number12 = "5",
+                                            time12 =  "16:30-18:05",
+                                            group12 = "БПИ-20",
+                                            objectt12 ="Информатика" }
+
+
+                    },
 
                 }
             };
