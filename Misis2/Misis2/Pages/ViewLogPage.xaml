@@ -30,12 +30,16 @@
                 <Label Text="Выберите группу:" HorizontalOptions="Start"
                        Style="{StaticResource label3}"/>
                 <Picker Title="Выбрать"
+                        
                     ItemsSource="{Binding TimeFulls3}"
                     ItemDisplayBinding="{Binding name}"
                     SelectedItem="{Binding SelectedTimeFull}"/>
                 
                 <Label Text="{Binding MyTimeFull}"  TextColor="Teal"/>
-                
+
+                <Label Text="Выберите дату:" HorizontalOptions="Start"
+                       Style="{StaticResource label3}"/>
+                <DatePicker Format="D" Date ="{Binding StartDate}" />
 
                 <Button Text="Просмотреть"
                         HorizontalOptions="Center"

@@ -254,7 +254,7 @@ namespace Misis2.ModelView
             }
         }
 
-        public string Url = "https://script.google.com/macros/s/AKfycbwYLf4Cu8gw8xICie6DHq79VdAwAmGTzW7MUtxgx6kOWjRnqhgwwY4PJT-d5bVvMrnQ/exec";
+        public string Url = "https://script.google.com/macros/s/AKfycbwpIgYp0BqfSSQJbIU5sBqsHKgWt8g7L5ESk0t1ltNSJiWD4wH4MY5C7KeDF097Lu2U/exec";
         private  void MarkTapped2(object obj)
         {
             StatusValue = "ОТМЕЧЕНО";
@@ -299,7 +299,7 @@ namespace Misis2.ModelView
 
             var data = MaillRootList;           
                 //var client = new HttpClient(); передаем данные о студентах в sheets
-                //var uri = "https://script.google.com/macros/s/AKfycbzRkXQ30uyIPZ_WAjB5HhluxnscgCxUUKqvmZKkXubVCzLlX7v506BMsWNtMrAKBfBy/exec";
+                //var uri = "https://script.google.com/macros/s/AKfycbyHjBwawyYj5Skok9ui0p97Tp9qjj_dNYhiDNyeJibEZydKpptjPNuIQRMTh8Uw_ibJ/exec";
                 //for (int i = 0; i<data.Count;i++)
                 //{
                 //    var jsonString = JsonConvert.SerializeObject(data[i]);

@@ -22,10 +22,7 @@ namespace Misis2.ModelView
         public ViewLogPageModel()
         {
             GetDisciplinesAsync();
-            DisciplineList = GetDiscipline().OrderBy(t => t.name).ToList();
-            MyDiscipline = "Выбранно: ";
-            TimeFullList = GetTimeFull().OrderBy(t => t.groupName).ToList();
-            MyTimeFull = "Выбранно: ";
+           
 
             StartDate = new DateTime(2020, 1, 1);
             EndDate = new DateTime(2020, 3, 31);
@@ -44,6 +41,19 @@ namespace Misis2.ModelView
                 }
             }
         }
+        private string _id0;
+        public string Id0
+        {
+            get { return _id0; }
+            set
+            {
+                if (_id0 != value)
+                {
+                    _id0 = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         private string _myTimeFull;
         public string MyTimeFull
         {
@@ -58,8 +68,8 @@ namespace Misis2.ModelView
             }
         }
 
-        private TimeFull _selectedTimeFull { get; set; }
-        public TimeFull SelectedTimeFull
+        private TimeFull3 _selectedTimeFull { get; set; }
+        public TimeFull3 SelectedTimeFull
         {
             get { return _selectedTimeFull; }
             set
@@ -67,7 +77,7 @@ namespace Misis2.ModelView
                 if (_selectedTimeFull != value)
                 {
                     _selectedTimeFull = value;
-                    MyTimeFull = _selectedTimeFull.groupName;
+                    MyTimeFull = _selectedTimeFull.name;
                 }
             }
         }
@@ -83,47 +93,28 @@ namespace Misis2.ModelView
                     // Do whatever functionality you want...When a selectedItem is changed..
                     // write code here..
                     MyDiscipline =_selectedDiscipline.name;
+                    Id0 = _selectedDiscipline.id;
                     GetTimeFullAsync();
                 }
             }
         }
-        public List<TimeFull> TimeFullList { get; set; }
-        public List<TimeFull> GetTimeFull()
-        {
-            var cities = new List<TimeFull>()
-            {
-                new TimeFull(){groupName= "БПИ-18"},
-                new TimeFull(){groupName= "БПИ-19"}
-            };
-
-            return cities;
-        }
-        public List<Discipline> DisciplineList { get; set; }
-        public List<Discipline> GetDiscipline()
-        {
-            var cities = new List<Discipline>()
-            {
-                new Discipline(){name= "Информатика"},
-                new Discipline(){name= "Проектирование информационных систем"}
-            };
-
-            return cities;
-        }
-        private string _selectedDate;
-        public string SelectedDate
+       
+        DateTime _startdate;
+        public DateTime StartDate
         {
             get
             {
-                return _selectedDate;
+                return _startdate;
             }
             set
             {
-                _selectedDate = value;
-                RaisePropertyChanged("SelectedDate");
+                _startdate = value;
+                RaisePropertyChanged("StartDate");
+
             }
         }
 
-       
+
         private ObservableCollection<Discipline> disciplines;
         public ObservableCollection<Discipline> Disciplines
         {
@@ -185,7 +176,7 @@ namespace Misis2.ModelView
 
         }
 
-        public DateTime StartDate { get; set; }
+
         public DateTime EndDate { get; set; }
 
         public void RaisePropertyChanged([CallerMemberName] string property = "")
@@ -200,9 +191,21 @@ namespace Misis2.ModelView
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+        private MaillRoot223 maillRoot223;
+        public MaillRoot223 MaillRoot223s
+        {
+            get { return maillRoot223; }
+            set
+            {
+                maillRoot223 = value;
+                OnPropertyChanged("MaillRoot223s");
+            }
+        }
         private void MarkTapped(object obj)
         {
-            var bindingContext = new FourPageModel { };
+            MaillRoot223s = new MaillRoot223() { idCode = "19", name = MyDiscipline, grop = MyTimeFull, date = StartDate.ToString("MM/dd/yyyy"), id = Id0 };
+           // var conf = new MaillRoot223() { idCode = "19", name = MyDiscipline, grop = MyTimeFull, date = StartDate  ,id = Id0};
+        var bindingContext = new FourPageModel { MaillRoot223s = MaillRoot223s };
             var page = new FourPage() { BindingContext = bindingContext };
             App.Current.MainPage.Navigation.PushAsync(page);
         }

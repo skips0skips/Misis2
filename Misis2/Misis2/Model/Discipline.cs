@@ -32,6 +32,14 @@ namespace Misis2.Model
         public string id { get; set; }
         public string title { get; set; }
     }
+    public class MaillRoot223 //классы для отправки на сервер данных об отметки
+    {
+        public string idCode { get; set; }
+        public string name { get; set; }
+        public string grop { get; set; }
+        public string date { get; set; }
+        public string id { get; set; }
+    }
 
     public class User
     {
@@ -59,6 +67,37 @@ namespace Misis2.Model
         public string patronymic { get; set; }
         [JsonProperty(PropertyName = "data")]
         public DateTime data { get; set; }
+    }
+    public class MaillRoot22
+    {
+        [JsonProperty(PropertyName = "id")]
+        public string id { get; set; }
+        [JsonProperty(PropertyName = "mark")]
+        public string mark { get; set; }
+
+        [JsonProperty(PropertyName = "firstName")]
+        public string firstName { get; set; }
+        [JsonProperty(PropertyName = "lastName")]
+        public string lastName { get; set; }
+        [JsonProperty(PropertyName = "patronymic")]
+        public string patronymic { get; set; }
+        [JsonProperty(PropertyName = "date")]
+        public string date { get; set; }
+
+    }
+    public class MaillRoot67
+    {
+        [JsonProperty(PropertyName = "id")]
+        public string id { get; set; }
+        [JsonProperty(PropertyName = "mark")]
+        public string mark { get; set; }
+
+        [JsonProperty(PropertyName = "firstName")]
+        public string firstName { get; set; }
+        [JsonProperty(PropertyName = "lastName")]
+        public string lastName { get; set; }
+        [JsonProperty(PropertyName = "patronymic")]
+        public string patronymic { get; set; }      
 
 
     }
